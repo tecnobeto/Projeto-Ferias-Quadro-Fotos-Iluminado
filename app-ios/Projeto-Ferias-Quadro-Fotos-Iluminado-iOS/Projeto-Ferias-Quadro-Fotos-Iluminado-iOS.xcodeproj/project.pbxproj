@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB9F39141B3FA84E001D1D56 /* DispositivosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F39131B3FA84E001D1D56 /* DispositivosTableViewController.swift */; };
 		DBC3FA9D1B3F8F3F00FC004C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3FA9C1B3F8F3F00FC004C /* AppDelegate.swift */; };
 		DBC3FA9F1B3F8F3F00FC004C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC3FA9E1B3F8F3F00FC004C /* ViewController.swift */; };
 		DBC3FAA21B3F8F3F00FC004C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC3FAA01B3F8F3F00FC004C /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB9F39131B3FA84E001D1D56 /* DispositivosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispositivosTableViewController.swift; sourceTree = "<group>"; };
 		DBC3FA971B3F8F3F00FC004C /* Projeto-Ferias-Quadro-Fotos-Iluminado-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projeto-Ferias-Quadro-Fotos-Iluminado-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC3FA9B1B3F8F3F00FC004C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBC3FA9C1B3F8F3F00FC004C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		DBC3FA991B3F8F3F00FC004C /* Projeto-Ferias-Quadro-Fotos-Iluminado-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DB9F39131B3FA84E001D1D56 /* DispositivosTableViewController.swift */,
 				DBC3FA9C1B3F8F3F00FC004C /* AppDelegate.swift */,
 				DBC3FA9E1B3F8F3F00FC004C /* ViewController.swift */,
 				DBC3FAA01B3F8F3F00FC004C /* Main.storyboard */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC3FA9F1B3F8F3F00FC004C /* ViewController.swift in Sources */,
+				DB9F39141B3FA84E001D1D56 /* DispositivosTableViewController.swift in Sources */,
 				DBC3FA9D1B3F8F3F00FC004C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +413,7 @@
 				DBC3FAB81B3F8F3F00FC004C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBC3FAB91B3F8F3F00FC004C /* Build configuration list for PBXNativeTarget "Projeto-Ferias-Quadro-Fotos-Iluminado-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				DBC3FABB1B3F8F3F00FC004C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

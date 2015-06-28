@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class ViewController: UIViewController {
-
+    
+    //Inicializa variaveis
+    let _centralManager = CBCentralManager()
+    let _selectedPeripheral = CBPeripheral()
+    
+    /*
+        FUNCOES PARA ACESSAR O BLUETOOTH
+    */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,3 +32,4 @@ class ViewController: UIViewController {
 
 }
 
+/**/
