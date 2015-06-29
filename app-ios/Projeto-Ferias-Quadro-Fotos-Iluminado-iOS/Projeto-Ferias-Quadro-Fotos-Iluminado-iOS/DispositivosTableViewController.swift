@@ -167,9 +167,9 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
         }
     }
     
-    // Get data values when they are updated
+    // Quando é recebido algo do Device - Retorno
     func peripheral(peripheral: CBPeripheral?, didUpdateValueForCharacteristic characteristic: CBCharacteristic?, error: NSError!) {
-        println("Got some!")
+        println("Funcionou - Retorno com sucesso!")
     }
     
     //Cancela a conexao
@@ -195,10 +195,17 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
     
     //Escreve um valor novo no BLe
     func writeValue(data: String){
+        
         let data = (data as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        
+        print("Escreve no arduino1")
         if let peripheralDevice = peripheralDevice{
-            if let deviceCharacteristics = deviceCharacteristics{
-                peripheralDevice.writeValue(data, forCharacteristic: deviceCharacteristics, type: CBCharacteristicWriteType.WithoutResponse)
+            print("Escreve no arduino3")
+            if let deviceCharacteristics = deviceCharacteristics {
+                
+                //Pega a String e manda para o arduino
+                peripheralDevice.writeValue(data!, forCharacteristic: deviceCharacteristics, type: CBCharacteristicWriteType.WithResponse)
+                print("Escreve no arduino")
             }
         }
     }
@@ -287,9 +294,16 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
                     navigationItem.title = "Connecting \(deviceName)"
                 }
             }
+            
+            
+            
         }
     }
 
+    @IBAction func clickEnviaDados(sender: AnyObject) {
+        println("Ta enviando")
+        writeValue("c")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
