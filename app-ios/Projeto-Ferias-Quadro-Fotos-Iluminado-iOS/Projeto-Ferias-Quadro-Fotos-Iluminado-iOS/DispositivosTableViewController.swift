@@ -169,7 +169,10 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
     
     // Quando é recebido algo do Device - Retorno
     func peripheral(peripheral: CBPeripheral?, didUpdateValueForCharacteristic characteristic: CBCharacteristic?, error: NSError!) {
-        println("Funcionou - Retorno com sucesso!")
+        
+        let ret = NSString(data:characteristic!.value!, encoding:NSUTF8StringEncoding) as! String
+
+        println("Retorno - \(ret)")
     }
     
     //Cancela a conexao
