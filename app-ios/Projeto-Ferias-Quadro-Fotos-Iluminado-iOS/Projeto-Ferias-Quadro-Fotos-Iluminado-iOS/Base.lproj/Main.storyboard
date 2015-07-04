@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFR-1T-NcA">
-                                <rect key="frame" x="119" y="509" width="136" height="30"/>
+                                <rect key="frame" x="119" y="563" width="136" height="30"/>
                                 <state key="normal" title="Mostra Dispositivos">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -48,9 +48,6 @@
                             <state key="normal" title="Envia Dados">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="clickEnviaDados:" destination="zrl-2H-BTU" eventType="touchUpInside" id="YUZ-xb-jFS"/>
-                            </connections>
                         </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="dvm-mj-d5L" detailTextLabel="uNn-8K-e9B" rowHeight="71" style="IBUITableViewCellStyleValue1" id="MHh-S7-Es5">
@@ -87,10 +84,146 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="TRP-mt-7oQ" kind="showDetail" identifier="sugueQuadroFotos" id="wuO-C3-NKO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjY-uw-PrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="816.5" y="-82.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P73-fU-yAP">
+            <objects>
+                <navigationController id="TRP-mt-7oQ" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6lp-VH-y8Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XOh-AR-pL6" kind="relationship" relationship="rootViewController" id="IzG-yB-LDh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQ4-aJ-sNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1403.5" y="-459.5"/>
+        </scene>
+        <!--Quadros View Controller-->
+        <scene sceneID="jCb-kq-ys3">
+            <objects>
+                <viewController storyboardIdentifier="QuadrosViewController" id="XOh-AR-pL6" customClass="QuadrosViewController" customModule="Projeto_Ferias_Quadro_Fotos_Iluminado_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jmq-QC-yKS"/>
+                        <viewControllerLayoutGuide type="bottom" id="21W-83-S3f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lMd-rv-bhL">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiV-z8-YiN">
+                                <rect key="frame" x="290" y="337" width="86" height="30"/>
+                                <state key="normal" title="Envia Dados">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="eventClickEnviaDados:" destination="XOh-AR-pL6" eventType="touchUpInside" id="yYb-kC-JG2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3D-eB-dHA">
+                                <rect key="frame" x="96" y="126" width="62" height="48"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 1"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="rGE-jK-1he"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCR-0x-idU">
+                                <rect key="frame" x="230" y="126" width="62" height="48"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 2"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="exh-a6-kU0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30N-oj-Pip">
+                                <rect key="frame" x="514" y="126" width="70" height="48"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 4"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="bHz-On-rbx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5p-ip-uTu">
+                                <rect key="frame" x="96" y="231" width="62" height="50"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 5"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="3eT-hY-qwG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEA-HG-3XB">
+                                <rect key="frame" x="230" y="231" width="62" height="50"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 6"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="8OS-o9-tpW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2an-UE-wWW">
+                                <rect key="frame" x="364" y="230" width="61" height="51"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 7"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="cOA-hP-maj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm6-Th-LUm">
+                                <rect key="frame" x="514" y="230" width="70" height="51"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 8"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="VCq-jN-PTv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-2g-S0p">
+                                <rect key="frame" x="364" y="126" width="61" height="48"/>
+                                <color key="backgroundColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Foto 3"/>
+                                <connections>
+                                    <action selector="clickBotao:" destination="XOh-AR-pL6" eventType="touchUpInside" id="1Xo-x8-Xvc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yo9-TI-I9W">
+                                <rect key="frame" x="427" y="135" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blabla:" destination="XOh-AR-pL6" eventType="touchUpInside" id="6ib-7g-6yG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fPh-Y5-PT4"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outletCollection property="arrayButton" destination="C3D-eB-dHA" collectionClass="NSMutableArray" id="Mth-NT-Xvf"/>
+                        <outletCollection property="arrayButton" destination="iCR-0x-idU" collectionClass="NSMutableArray" id="fBL-0N-D9z"/>
+                        <outletCollection property="arrayButton" destination="HRw-2g-S0p" collectionClass="NSMutableArray" id="hhk-Fc-gOB"/>
+                        <outletCollection property="arrayButton" destination="30N-oj-Pip" collectionClass="NSMutableArray" id="79K-cs-Goq"/>
+                        <outletCollection property="arrayButton" destination="N5p-ip-uTu" collectionClass="NSMutableArray" id="Vpo-wq-sFu"/>
+                        <outletCollection property="arrayButton" destination="UEA-HG-3XB" collectionClass="NSMutableArray" id="4Zt-yh-Ikq"/>
+                        <outletCollection property="arrayButton" destination="2an-UE-wWW" collectionClass="NSMutableArray" id="9Cl-x7-aQZ"/>
+                        <outletCollection property="arrayButton" destination="qm6-Th-LUm" collectionClass="NSMutableArray" id="IZE-iF-HZS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHp-xX-JZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1403.5" y="163.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UdY-Gj-nG4">

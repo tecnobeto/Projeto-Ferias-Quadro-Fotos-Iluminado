@@ -17,6 +17,9 @@ var deviceName: String? //Nome do Device
 var devicesRSSI = [NSNumber]() //Código do Device que será conectado
 var devicesServices: CBService! // Servicos do que o dispositivo vai fazer ao se conectar com o celular
 var deviceCharacteristics: CBCharacteristic! //Guarda informações importantes sobre o device que será conectado
+var abriuTela:Bool = false
+
+
 
 // é Importados todos os delegates para serem colocados na tableView
 class DispositivosTableViewController: UITableViewController, CBCentralManagerDelegate, CBPeripheralDelegate, UITableViewDelegate, UITableViewDataSource{
@@ -138,7 +141,7 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
         
     }
     
-    // Método sobrecarregado
+    // Quando discobre as caracteristicas do periférico, ultimo método a ser chamado pela conexão com o BLE
     func peripheral(peripheral: CBPeripheral?, didDiscoverCharacteristicsForService service: CBService?, error: NSError?) {
         
         //Verifica se o periférico é nulo
@@ -160,9 +163,16 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
                 }
                 
                 //Retorna pra view principal
-                if let navigationController = navigationController{
-                    navigationController.popViewControllerAnimated(true)
+//                if let navigationController = navigationController{
+//                    navigationController.popViewControllerAnimated(true)
+//                }
+                
+                if(!abriuTela){
+                    self.performSegueWithIdentifier("sugueQuadroFotos", sender: self)
+                    abriuTela = true
                 }
+                
+       
             }
         }
     }
@@ -197,18 +207,17 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
     }
     
     //Escreve um valor novo no BLe
-    func writeValue(data: String){
+    class func writeValue(data: String){
         
         let data = (data as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         
-        print("Escreve no arduino1")
         if let peripheralDevice = peripheralDevice{
-            print("Escreve no arduino3")
+            
             if let deviceCharacteristics = deviceCharacteristics {
                 
                 //Pega a String e manda para o arduino
                 peripheralDevice.writeValue(data!, forCharacteristic: deviceCharacteristics, type: CBCharacteristicWriteType.WithResponse)
-                print("Escreve no arduino")
+                
             }
         }
     }
@@ -305,7 +314,7 @@ class DispositivosTableViewController: UITableViewController, CBCentralManagerDe
 
     @IBAction func clickEnviaDados(sender: AnyObject) {
         println("Ta enviando")
-        writeValue("c")
+        DispositivosTableViewController.writeValue("10000000")
     }
     /*
     // Override to support conditional editing of the table view.
